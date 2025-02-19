@@ -24,3 +24,9 @@ eureka:
 
 server:
   port: 7074
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

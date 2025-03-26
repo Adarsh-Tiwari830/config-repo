@@ -7,7 +7,7 @@ spring:
     #hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 
   kafka:
-    bootstrap-servers: ${KAFKA_SERVER_HOST:localhost}:9092
+    bootstrap-servers: ${KAFKA_SERVER_HOST:localhost:9092}
 
   datasource:
     driverClassName: org.postgresql.Driver

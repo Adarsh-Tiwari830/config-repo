@@ -7,20 +7,22 @@ spring:
     #hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${KAFKA_SERVER_HOST:localhost}:9092
 
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/training
+    url: jdbc:postgresql://${DB_SERVER_HOST:localhost}/${POSTGRES_DB_NAME:training}
     username: postgres
-    password: Cloud@123$
+    password: ${POSTGRES_DB_PASSWORD:Cloud@123$}
 
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://${EUREKA_SERVER_HOST:registry-service}:8761/eureka/
+  instance:
+    prefer-ip-address: true
 server:
   port: 7075
 
